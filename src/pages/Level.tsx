@@ -1,7 +1,7 @@
 import React from "react";
 import kibiaiLogo from "../assets/images/kibiai.png";
 import titleImage from "../assets/images/title.png";
-import skeletonImage from "../assets/images/skeleton.png";
+// import skeletonImage from "../assets/images/skeleton.png";
 import one from "../assets/images/1.png";
 import two from "../assets/images/2.png";
 import three from "../assets/images/3.png";

@@ -9,6 +9,14 @@ const DynamicReport: React.FC = () => {
   const [totalPages, setTotalPages] = useState<number>(1);
   const [pagination, setPagination] = useState<any>(null);
 
+  console.log(
+    currentPage,
+    setCurrentPage,
+    totalPages,
+    setTotalPages,
+    pagination
+  );
+
   // ======== PLACE YOUR JSON DATA HERE ========
   const sampleJsonData: any[] = [
     {
@@ -6155,6 +6163,7 @@ function generateDynamicReport(jsonData: any[]): string {
     totals: Record<string, number>,
     level: number
   ) {
+    console.log(level);
     let html =
       '<div className="section-totals"><div className="totals-title">Totals</div><div className="totals-grid">';
     for (let [field, total] of Object.entries(totals)) {
