@@ -1,52 +1,77 @@
 import React from "react";
-
-// Import images (these should be in your assets/images/ folder)
+import { useNavigate } from "react-router-dom";
 import kibiaiLogo from "../assets/images/kibiai.png";
 import titleImage from "../assets/images/title.png";
+import skeletonImage from "../assets/images/skeleton.png";
+import kibizsystems from "../assets/images/kibizsystems.png";
 
 const Score: React.FC = () => {
+  const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-start p-6 max-w-2xl mx-auto">
-      {/* Header with logos */}
-      <div className="w-full flex flex-col lg:flex-row justify-between items-center mb-8 lg:mb-20">
-        <img
-          src={kibiaiLogo}
-          alt="KiBi-AI Logo"
-          className="h-32 object-contain"
-        />
-        <img
-          src={titleImage}
-          alt="Prompt-O-Saurus"
-          className="h-32 object-contain"
-        />
-      </div>
+    <div className="w-screen h-screen bg-white flex justify-center items-center overflow-hidden">
+      <div className="flex flex-col justify-between items-center w-full h-full px-6 py-12 lg:py-14 xl:py-2 max-w-2xl mx-auto">
+        {/* Header Section */}
+        <div className="flex flex-col items-center justify-center gap-4">
+          <img
+            src={kibizsystems}
+            alt="KiBiz Systems"
+            className="h-16 lg:h-20 object-contain"
+          />
+          <img
+            src={titleImage}
+            alt="Prompt-O-Saurus"
+            className="h-24 lg:h-32 object-contain"
+          />
+        </div>
 
-      {/* Welcome message */}
-      <div className="w-full text-center mb-8">
-        <h1 className="text-2xl font-bold text-[#5e17eb] mb-2">
-          Hello, Basudev
-        </h1>
-        <p className="text-lg text-gray-600">PROMPT-SAURUS</p>
-      </div>
+        {/* Middle Section (Card + Button) */}
+        <div className="flex flex-col items-center justify-center flex-1 w-full mt-6 mb-4">
+          {/* Score Card */}
+          <div className="bg-gray-100 rounded-2xl shadow-md p-8 flex flex-col items-center justify-center text-center w-full max-w-md mb-8">
+            <h1 className="text-2xl lg:text-3xl font-bold text-[#5e17eb] mb-2">
+              Hello, Basudev
+            </h1>
+            <p className="text-gray-700 text-base lg:text-lg font-medium mb-8">
+              PROMPT-SAURUS
+            </p>
 
-      {/* Score section */}
-      <div className="w-full bg-gray-100 rounded-lg p-8 mb-6 flex flex-col items-center justify-center min-h-[300px]">
-        <h2 className="text-xl font-bold text-[#5e17eb] mb-6">TOTAL POINTS</h2>
+            <h2 className="text-xl lg:text-2xl font-bold text-[#5e17eb] mb-4">
+              TOTAL POINTS
+            </h2>
+            <div className="text-6xl font-bold text-[#5e17eb] mb-8 tracking-wide">
+              3 0
+            </div>
 
-        {/* Points display */}
-        <div className="text-6xl font-bold text-[#5e17eb] mb-8">3 0</div>
+            <div className="text-center">
+              <p className="text-gray-600 text-lg mb-2 font-medium">
+                YOUR RANK:
+              </p>
+              <p className="text-3xl font-bold text-[#5e17eb]">21</p>
+            </div>
+          </div>
 
-        {/* Rank display */}
-        <div className="text-center">
-          <p className="text-lg text-gray-600 mb-2">YOUR RANK:</p>
-          <p className="text-3xl font-bold text-[#5e17eb]">21</p>
+          {/* Try Again Button */}
+          <button
+            className="bg-[#5e17eb] hover:bg-purple-700 text-white font-semibold rounded-full shadow-lg transition-all duration-200 transform hover:scale-105 flex items-center justify-center gap-3 px-8 py-3 text-lg"
+            onClick={() => navigate("/level")}
+          >
+            <img src={skeletonImage} alt="" className="h-6 lg:h-7" />
+            <span>TRY AGAIN</span>
+          </button>
+        </div>
+
+        {/* Footer */}
+        <div className="flex flex-col items-center gap-2 mt-4 mb-2">
+          <p className="text-[#7456e1] text-sm lg:text-base font-semibold">
+            POWERED BY
+          </p>
+          <img
+            src={kibiaiLogo}
+            alt="KiBi-AI"
+            className="h-16 lg:h-20 object-contain"
+          />
         </div>
       </div>
-
-      {/* Try again button */}
-      <button className="bg-[#5e17eb] hover:bg-purple-700 text-white font-semibold px-8 py-3 rounded-full shadow-lg transition-all duration-200 transform hover:scale-105 w-full max-w-xs">
-        TRY AGAIN
-      </button>
     </div>
   );
 };

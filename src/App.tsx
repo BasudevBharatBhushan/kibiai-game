@@ -6,12 +6,13 @@ import Level from "./pages/Level";
 import Instructions from "./pages/Instructions";
 import GenerateReport from "./pages/GenerateReport";
 import Score from "./pages/Score";
+import UserForm from "./pages/UserForm";
 
 function App() {
   return (
     <Router>
       {/* <Header /> */}
-      <main className=" overflow-hidden">
+      <main className="">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/report" element={<Report />} />
@@ -21,6 +22,7 @@ function App() {
           <Route path="/instructions" element={<Instructions />} />
           <Route path="/generate-report" element={<GenerateReport />} />
           <Route path="/score" element={<Score />} />
+          <Route path="/user-form" element={<UserForm />} />
         </Routes>
       </main>
       {/* <Footer /> */}
