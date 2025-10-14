@@ -21,7 +21,7 @@ body {
 }
 
 .dynamic-report {
-  width: 215.9mm;
+  /* width: 215.9mm; */
   min-height: 297mm;
   padding: 15mm 10mm;
   margin: 0 auto;
