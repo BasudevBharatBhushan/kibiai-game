@@ -1,7 +1,5 @@
-import DynamicReport from "../components/sections/DynamicReport";
-
 const Report = () => {
-  return <DynamicReport />;
+  return <div>hello report</div>;
 };
 
 export default Report;

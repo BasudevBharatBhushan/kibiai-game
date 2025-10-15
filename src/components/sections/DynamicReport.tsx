@@ -13,6 +13,8 @@ const DynamicReport: React.FC<DynamicReportProps> = ({ jsonData }) => {
   const [totalPages, setTotalPages] = useState<number>(1);
   const [pagination, setPagination] = useState<any>(null);
 
+  console.log(setCurrentPage, pagination);
+
   useEffect(() => {
     if (jsonData?.length > 0) {
       const html = generateDynamicReport(jsonData);
@@ -77,6 +79,8 @@ function generateDynamicReport(jsonData: any[]): string {
   let bodySortKeys: string[] = [];
   let bodyFieldOrder: string[] = [];
   let bodySortOrder: any[] = [];
+
+  console.log(bodySortOrder);
 
   function multiSort(array: any[], sortKeys: string[]) {
     return array.sort((a, b) => {
@@ -202,6 +206,7 @@ function generateDynamicReport(jsonData: any[]): string {
     totals: Record<string, number>,
     level: number
   ) {
+    console.log(level);
     let html =
       '<div className="section-totals"><div className="totals-title">Totals</div><div className="totals-grid">';
     for (let [field, total] of Object.entries(totals)) {
